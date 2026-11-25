@@ -1,33 +1,45 @@
 ---
 import '../styles/global.css';
 
-const skills = [
-  { name: "React", cat: "Frontend" },
-  { name: "JavaScript (ES6+)", cat: "Frontend" },
-  { name: "HTML5 / CSS3", cat: "Frontend" },
-  { name: "Python", cat: "Backend / Logic" },
+const currentYear = new Date().getFullYear();
+
+const techSkills = [
+  { name: "Kotlin", cat: "Mobile / Logic" },
   { name: "Java", cat: "Backend / OOP" },
-  { name: "SQL", cat: "Bases de Datos" },
-  { name: "Bash / CLI", cat: "Herramientas" },
+  { name: "Python", cat: "Backend / Scripting" },
+  { name: "React", cat: "Frontend Web" },
+  { name: "JavaScript (ES6+)", cat: "Frontend Web" },
+  { name: "HTML5 / CSS3", cat: "Web Standards" },
+  { name: "SQL", cat: "Databases" },
+  { name: "Bash / Shell", cat: "CLI / DevOps" },
+];
+
+const softSkills = [
+  "Resolución de Problemas",
+  "Trabajo en Equipo",
+  "Metodologías Ágiles",
+  "Comunicación Asertiva",
+  "Gestión de Proyectos",
+  "Capacidad de Adaptación"
 ];
 
 const projects = [
   {
     title: "MoodSpace",
-    desc: "Aplicación interactiva enfocada en registro, seguimiento y bienestar del usuario con interfaz moderna.",
-    tags: ["React", "JavaScript", "Frontend"],
+    desc: "Aplicación móvil y herramientas de soporte orientadas al bienestar, seguimiento interactivo y registro de estados.",
+    tags: ["Kotlin", "Shell", "Mobile"],
     repo: "https://github.com/CoderX-2/MoodSpace",
   },
   {
     title: "App-Delivery",
-    desc: "Plataforma de gestión orientada al flujo de pedidos, logística y control de estados.",
-    tags: ["Full Stack", "JavaScript", "SQL"],
+    desc: "Solución de logística y distribución enfocada en la gestión eficiente de pedidos, flujo de entregas y arquitectura móvil.",
+    tags: ["Kotlin", "Mobile / Logic"],
     repo: "https://github.com/CoderX-2/App-Delivery",
   },
   {
     title: "AsisteDragon",
-    desc: "Sistema integral de registro y control de asistencias para optimizar la administración institucional.",
-    tags: ["Java / Python", "SQL", "Control"],
+    desc: "Sistema integral de control institucional para la gestión, registro y seguimiento de asistencias con lógica robusta.",
+    tags: ["Java", "Backend / OOP", "SQL"],
     repo: "https://github.com/CarlosN225/AsisteDragon",
   }
 ];
@@ -37,7 +49,7 @@ const projects = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jacob Barrera | Full Stack Trainee</title>
+    <title>Jacob Rafael | Software Engineer & Full Stack Trainee</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -52,7 +64,7 @@ const projects = [
         </a>
         <nav class="space-x-6 text-sm font-['Fira_Code'] hidden md:block">
           <a href="#about" class="text-slate-400 hover:text-cyan-400 transition-colors">01.// Sobre Mí</a>
-          <a href="#skills" class="text-slate-400 hover:text-cyan-400 transition-colors">02.// Stack</a>
+          <a href="#skills" class="text-slate-400 hover:text-cyan-400 transition-colors">02.// Habilidades</a>
           <a href="#projects" class="text-slate-400 hover:text-cyan-400 transition-colors">03.// Repositorios</a>
           <a href="#contact" class="text-slate-400 hover:text-cyan-400 transition-colors">04.// Contacto</a>
         </nav>
@@ -61,22 +73,22 @@ const projects = [
 
     <main class="max-w-5xl mx-auto px-6 py-12 space-y-20">
       
-      <!-- Hero con Espacio para Foto -->
+      <!-- Hero -->
       <section class="pt-6 md:pt-12 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
         <div class="space-y-6 flex-1">
           <div class="inline-flex items-center gap-2 border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 rounded-full text-xs font-['Fira_Code'] text-emerald-400">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            PLAYER 1 READY: Full Stack Trainee
+            PLAYER 1 READY: Software Engineer Trainee
           </div>
 
           <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
-            Hola, soy <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">Jacob Barrera</span>
+            Hola, soy <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">Jacob Rafael</span>
           </h1>
           <p class="text-lg md:text-xl text-slate-400 font-medium">
             Ingeniero en Desarrollo y Gestión de Software
           </p>
           <p class="text-slate-400 max-w-xl leading-relaxed text-sm md:text-base">
-            Desarrollo soluciones completas integrando bases de datos SQL, servicios backend en Python/Java e interfaces modernas e intuitivas con React.
+            Diseño e implemento soluciones integrales que abarcan desde el desarrollo de sitios y aplicaciones web responsivas (React, JS) hasta el desarrollo móvil en Kotlin, respaldadas por arquitecturas sólidas de backend y bases de datos SQL.
           </p>
 
           <div class="pt-2 flex flex-wrap gap-4 font-['Fira_Code'] text-sm">
@@ -89,13 +101,18 @@ const projects = [
           </div>
         </div>
 
-        <!-- Tarjeta de Perfil / Foto (Player Card) -->
+        <!-- Tarjeta de Video Avatar -->
         <div class="relative group">
           <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-2xl blur opacity-30 group-hover:opacity-75 transition duration-500"></div>
-          <div class="relative w-44 h-44 md:w-52 md:h-52 rounded-2xl bg-slate-900 border border-slate-700 flex flex-col items-center justify-center overflow-hidden">
-            <!-- Si tienes una foto en 'public/foto.jpg', reemplaza este div por: <img src="/foto.jpg" alt="Jacob Barrera" class="w-full h-full object-cover" /> -->
-            <span class="font-['Fira_Code'] text-4xl text-cyan-400 font-bold tracking-widest">[JB]</span>
-            <span class="text-xs font-['Fira_Code'] text-slate-500 mt-2">// Player Avatar</span>
+          <div class="relative w-48 h-48 md:w-56 md:h-56 rounded-2xl bg-slate-900 border border-slate-700 overflow-hidden shadow-2xl">
+            <video 
+              src="/avatar.mp4" 
+              autoplay 
+              loop 
+              muted 
+              playsinline 
+              class="w-full h-full object-cover block"
+            ></video>
           </div>
         </div>
       </section>
@@ -106,29 +123,65 @@ const projects = [
           <span class="text-emerald-400">01.</span> Sobre Mí
           <span class="h-[1px] bg-slate-800 flex-1 ml-4"></span>
         </h2>
-        <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-lg space-y-3 leading-relaxed text-slate-300">
+        <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-lg space-y-4 leading-relaxed text-slate-300">
           <p>
-            Mi nombre completo es <strong>Jacob Rafael Barrera Rubin de Celis</strong>. Estoy por concluir la Ingeniería en Desarrollo y Gestión de Software, lo que me ha permitido combinar habilidades de arquitectura de software, metodologías de trabajo y desarrollo activo de código.
+            Mi nombre completo es <strong>Jacob Rafael Barrera Rubin de Celis</strong>. Estoy por concluir la Ingeniería en Desarrollo y Gestión de Software, lo que me ha aportado una visión integral que combina buenas prácticas de programación, gestión ágil de proyectos y control de calidad.
           </p>
           <p>
-            Me motiva resolver problemas técnicos reales, diseñar flujos de datos limpios y seguir aprendiendo en un entorno profesional en constante evolución.
+            Cuento con experiencia construyendo aplicaciones web dinámicas con React y JavaScript, desarrollo de aplicaciones móviles con Kotlin, arquitectura backend en Java y Python, así como automatización con Bash/Shell y manipulación de datos en SQL.
           </p>
         </div>
       </section>
 
-      <!-- Skills -->
-      <section id="skills" class="space-y-6">
+      <!-- Skills (Técnicas, Idiomas y Blandas) -->
+      <section id="skills" class="space-y-8">
         <h2 class="text-2xl font-bold font-['Fira_Code'] text-white flex items-center gap-3">
-          <span class="text-emerald-400">02.</span> Habilidades y Tecnologías
+          <span class="text-emerald-400">02.</span> Inventario de Habilidades
           <span class="h-[1px] bg-slate-800 flex-1 ml-4"></span>
         </h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {skills.map((skill) => (
-            <div class="border border-slate-800 bg-slate-900/60 p-4 rounded hover:border-cyan-500/60 transition group hover:shadow-[0_0_12px_rgba(6,182,212,0.15)]">
-              <span class="text-xs font-['Fira_Code'] text-slate-500 block mb-1 group-hover:text-cyan-400">// {skill.cat}</span>
-              <span class="text-slate-100 font-semibold">{skill.name}</span>
+
+        <!-- Tecnologías -->
+        <div class="space-y-3">
+          <h3 class="text-sm font-['Fira_Code'] text-slate-400">// Stack Técnico</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {techSkills.map((skill) => (
+              <div class="border border-slate-800 bg-slate-900/60 p-4 rounded hover:border-cyan-500/60 transition group hover:shadow-[0_0_12px_rgba(6,182,212,0.15)]">
+                <span class="text-xs font-['Fira_Code'] text-slate-500 block mb-1 group-hover:text-cyan-400">// {skill.cat}</span>
+                <span class="text-slate-100 font-semibold">{skill.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Idioma & Habilidades Blandas -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+          
+          <!-- Idioma -->
+          <div class="border border-slate-800 bg-slate-900/50 p-5 rounded-lg space-y-2">
+            <h3 class="text-sm font-['Fira_Code'] text-cyan-400">// Idiomas</h3>
+            <div class="flex items-center justify-between pt-1">
+              <span class="font-semibold text-white">Inglés</span>
+              <span class="text-xs font-['Fira_Code'] text-emerald-400 border border-emerald-500/30 px-2.5 py-1 rounded bg-emerald-950/40">
+                Nivel B2 (Intermedio Alto)
+              </span>
             </div>
-          ))}
+            <p class="text-xs text-slate-400 pt-1">
+              Lectura y análisis de documentación técnica, comunicación en equipos multidisciplinarios y redacción técnica en inglés.
+            </p>
+          </div>
+
+          <!-- Blandas -->
+          <div class="md:col-span-2 border border-slate-800 bg-slate-900/50 p-5 rounded-lg space-y-3">
+            <h3 class="text-sm font-['Fira_Code'] text-cyan-400">// Habilidades Profesionales & Blandas</h3>
+            <div class="flex flex-wrap gap-2">
+              {softSkills.map((soft) => (
+                <span class="text-xs font-['Fira_Code'] bg-slate-800/80 border border-slate-700/60 text-slate-200 px-3 py-1.5 rounded-full hover:border-cyan-400/50 transition">
+                  ✓ {soft}
+                </span>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -144,7 +197,7 @@ const projects = [
             <div class="border border-slate-800 bg-slate-900/50 p-6 rounded-lg flex flex-col justify-between hover:border-emerald-500/60 transition group">
               <div class="space-y-3">
                 <span class="text-xs font-['Fira_Code'] text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded bg-emerald-950/40 inline-block">
-                  Source Available
+                  Source Code
                 </span>
                 <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition">{proj.title}</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">{proj.desc}</p>
@@ -179,11 +232,10 @@ const projects = [
         </h2>
         <div class="border border-slate-800 bg-slate-900/50 p-8 rounded-lg text-center space-y-4">
           <p class="text-slate-400 max-w-md mx-auto">
-            ¿Tienes una propuesta o vacante para un perfil Full Stack Trainee? Escríbeme directamente.
+            ¿Tienes una propuesta o vacante para un perfil Software Engineer / Trainee? Escríbeme directamente.
           </p>
           <div class="flex flex-wrap justify-center gap-4 font-['Fira_Code'] text-sm pt-4">
-            <!-- Modifica con tu correo real aquí -->
-            <a href="mailto:tu-correo@ejemplo.com" class="border border-cyan-500/40 text-cyan-400 px-5 py-2.5 rounded hover:bg-cyan-500/10 transition">
+            <a href="23302134@utfv.edu.mx" class="border border-cyan-500/40 text-cyan-400 px-5 py-2.5 rounded hover:bg-cyan-500/10 transition">
               ✉ Enviar Correo
             </a>
             <a href="https://github.com/CoderX-2" target="_blank" rel="noopener noreferrer" class="border border-slate-700 text-slate-300 px-5 py-2.5 rounded hover:border-slate-500 transition">
@@ -200,7 +252,7 @@ const projects = [
 
     <!-- Footer -->
     <footer class="border-t border-slate-800/80 py-6 text-center text-xs font-['Fira_Code'] text-slate-500">
-      Jacob Rafael Barrera Rubin de Celis &bull; Built with Astro & Tailwind &bull; 2024
+      Jacob Rafael Barrera Rubin de Celis &bull; Built with Astro & Tailwind &bull; {currentYear}
     </footer>
 
   </body>
